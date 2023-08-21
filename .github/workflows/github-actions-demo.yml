@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Install Ubuntu dependencies
-        run: sudo apt-get update && sudo apt-get install -y libboost-all-dev libssl-dev libcurl4-openssl-dev gcc-7 g++-7 --no-install-recommends
+        run: sudo apt-get update -y && sudo apt-get install clang-7 ccache libcurl4-openssl-dev -y --no-install-recommends --fix-missing
         shell: bash
       - run: apt list --installed
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
